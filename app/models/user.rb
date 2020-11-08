@@ -14,7 +14,6 @@ VALID_PASSWORD_REGEX =/\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])\w{6,12}\z/
   #パスワードの文字数制限
   validates :password, length: { in: 8..32}
   validates :password, format: { with: VALID_PASSWORD_REGEX }
-  validates :password, message: "は半角6~12文字英大文字・小文字・数字それぞれ１文字以上含む必要があります"
   
   has_secure_password
 end
