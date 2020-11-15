@@ -40,8 +40,10 @@ class ImageUploader < CarrierWave::Uploader::Base
    end
    
     def size_range
-    1..10.megabytes
+    1.byte..10.megabytes
     end
+  #validates :avatar, file_size: { less_than: 2.gigabytes }
+  
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
